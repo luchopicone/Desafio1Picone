@@ -16,7 +16,7 @@ do {
 
 //Ejemplo 2
 
-let entrada = promp('Ingrese un nombre'). toUpperCase();
+let entrada = promp('Ingrese un nombre').toUpperCase();
 
 while ( entrada != 'ESC'){
 
