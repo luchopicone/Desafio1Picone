@@ -1,36 +1,48 @@
-// Ejemplo 1
+let producto ="";
+let precio = 0;
+let seguirComprando = false;
+let cantidad = 0;
+let precioTotal = 0;
 
-let askAgain = true;
-
-do {
-    let userEmail = prompt('Ingrese su correo electronico');
-    let confirmUserEmail = prompt('Confirme su correo electronico');
-
-    if (userEmail === confirmUserEmail){
-        alert('El correo ha sido guardado con exito!');
-        askAgain = false;
-    }else{
-        alert('Los correos deben no coniciden')
-    }
-} while (askAgain);
-
-//Ejemplo 2
-
-let entrada = promp('Ingrese un nombre').toUpperCase();
-
-while ( entrada != 'ESC'){
-
-    switch (entrada) {
-        case 'ANA':
-            alert('Hola Ana!');
-            break;
-        case 'JUAN':
-            alert('Hola Juan');
-            break;
-        default:
-            alert('Quien sos?');
-            break;
-    }
-
-    entrada = prompt('Ingrese otro nombre').toUpperCase();
+function calcularPrecio(producto,precio){
+    return precioTotal += producto * precio;
 }
+do{
+    producto = prompt("Querés comprar Teclado, Raton, Microfono, Monitor, o todo?");
+    cantidad = parseInt(prompt("Cuántos queres comprar?"));
+
+    switch(producto){
+        case "Teclado" :
+            precio = 8200;
+            break;
+
+        case "Raton" :
+            precio = 5500;
+            break;
+        
+        case "Microfono":
+            precio = 10300;
+            break;
+
+        case "Monitor":
+            precio = 39400;
+            break;
+
+        default :
+            alert("Ningun producto fue seleccionado, intente nuevamente");
+            precio = 0;
+            cantidad = 0;
+    }
+
+    calcularPrecio(precio,cantidad);
+
+    seguirComprando = confirm("¿Querés agregar otro/s productos?");
+        
+}while(seguirComprando);
+
+alert("El precio total es de: " + precioTotal);
+
+let FinCompra = confirm("¿Desea Finalizar Su Compra?");
+
+if(FinCompra) alert("Su compra fue realizada con exito");
+if(!FinCompra) alert("Vuelva pronto");
